@@ -7,13 +7,13 @@
 
 ## 使用步驟
 1. 到LINE Business開立一個機器人  
-取得以下資料：
+取得以下資料：  
 ```
   channelId: CHANNEL_ID,
   channelSecret: CHANNEL_SECRET,
   channelAccessToken: CHANNEL_ACCESS_TOKEN
 ```
-2. 下載這份repository
+2. 下載這份repository  
 專案clone下來後，在根目錄新增config.js
 ```
 // 放入你剛剛取得的資料

@@ -1,7 +1,6 @@
 # 使用Node.js開發結合口罩地圖開放資料的LINE聊天機器人
-此專案為開發LINE機器人的範例，若有任何意見，歡迎回饋。
+此專案為開發LINE機器人搭配政府提供的口罩open data為範例，若有任何意見，歡迎回饋。
 
-## 口罩地圖教學
 開發環境：Node.js  
 套件：[linebot-sdk](https://www.npmjs.com/package/linebot), [express](https://www.npmjs.com/package/express), [request](https://www.npmjs.com/package/request)  
 資料來源：[mask data made by g0v member - kiang](https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json)

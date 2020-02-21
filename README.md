@@ -8,14 +8,14 @@
 ## 使用步驟
 1. 到LINE Business開立一個機器人  
 取得以下資料：  
-```
+```javascript
   channelId: CHANNEL_ID,
   channelSecret: CHANNEL_SECRET,
   channelAccessToken: CHANNEL_ACCESS_TOKEN
 ```
 2. 下載這份repository  
 專案clone下來後，在根目錄新增config.js
-```
+```javascript
 // 放入你剛剛取得的資料
 const channel = {
     CHANNEL_ID: '',
@@ -28,12 +28,12 @@ module.exports =  {
 };
 ```
 3. 安裝套件
-```
+```bash
 npm install
 ```
 
 4. 執行專案
-```
+```bash
 node app.js
 ```
 
@@ -41,7 +41,7 @@ node app.js
 
 ## 補充
 由於是server to server，所以會有跨網域的問題，因此需要補上：  
-```
+```javascript
 app.all('*', (req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'X-Requested-With');
@@ -51,7 +51,7 @@ app.all('*', (req, res, next) => {
 
 ## 基本功能
 機器人會根據收到以下的動作，來執行function內的事件  
-```
+```javascript
 bot.on('message',      function (event) { });
 bot.on('follow',       function (event) { });
 bot.on('unfollow',     function (event) { });
@@ -65,7 +65,7 @@ bot.on('beacon',       function (event) { });
 
 ## 資料處理
 使用者傳送的資料可以從event中取得
-```
+```javascript
 const message = event.message.text;
 ```
 
@@ -73,22 +73,22 @@ const message = event.message.text;
 機器人回覆的方式有兩種
 1. reply
 只能回覆一次
-```
+```javascript
 event.reply(replyMessage).then(function (data) {}).catch(function (error) {});
 ```
 2. push
 可回覆多次，需得知使用者Id
-```
+```javascript
 const userId = event.source.userId;
 ```
 回覆內容給指定使用者
-```
+```javascript
 bot.push(userId, '歡迎追蹤口罩地圖'); 
 ```
 ## 回覆格式
 可單純回覆一個字串或是指定格式  
 以口罩地圖為例：
-```
+```javascript
 {
                 type: 'location',
                 title: store.properties.name,   
@@ -99,18 +99,18 @@ bot.push(userId, '歡迎追蹤口罩地圖');
 ```
 
 文字：    
-```
+```javascript
 event.reply('Hello, world');
 ```
 
 多文字：  
-```
+```javascript
 event.reply(['Hello, world 1', 'Hello, world 2']);
 event.reply({ type: 'text', text: 'Hello, world' });
 ```
 
 一次回覆多個物件：  
-```
+```javascript
 event.reply([
   { type: 'text', text: 'Hello, world 1' },
   { type: 'text', text: 'Hello, world 2' }
@@ -118,7 +118,7 @@ event.reply([
 ```
 
 回覆圖片：  
-```
+```javascript
 event.reply({
   type: 'image',
   originalContentUrl: 'https://example.com/original.jpg',

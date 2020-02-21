@@ -33,7 +33,7 @@ module.exports =  {
 npm install
 ```
 
-4. 執行套件
+4. 執行專案
 ```
 node app.js
 ```
